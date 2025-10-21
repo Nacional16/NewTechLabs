@@ -1,0 +1,559 @@
+/* --- Variables de Color Corporativas --- */
+/* Definimos los colores principales de la marca para usarlos en toda la web. */
+/* Esto facilita cambiar el esquema de colores en el futuro. */
+:root {
+  --primary-color: #0A2647;   /* Azul oscuro para fondos y elementos principales */
+  --secondary-color: #144272; /* Azul medio para acentos y secciones */
+  --accent-color: #205295;    /* Azul más claro para enlaces y botones */
+  --text-color: #EFEFEF;       /* Color de texto claro para buen contraste */
+  --light-bg-color: #f4f7fc;  /* Un fondo muy claro para secciones específicas */
+  --dark-text-color: #333;    /* Texto oscuro para usar sobre fondos claros */
+
+ --radius: 16px; 
+    *box-sizing: border-box; 
+
+}
+
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif; margin: 0; padding: 2rem; background: #0b0b0b; color: #fafafa; }
+    h1 { font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem); text-align: center; margin-bottom: 1rem; 
+    }
+
+
+
+
+
+/* --- Estilos Generales --- */
+/* Reseteamos estilos por defecto del navegador y configuramos la base. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Asegura que el padding y borde no añadan tamaño extra */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Familia de fuentes moderna y legible */
+  background-color: var(--light-bg-color); /* Fondo general de la página */
+  color: var(--dark-text-color); /* Color de texto por defecto */
+  line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+}
+
+/* --- Smooth Scroll --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Contenedor principal para centrar el contenido */
+.container {
+  max-width: 1200px; /* Ancho máximo del contenido */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 0 20px; /* Espaciado lateral para que el contenido no toque los bordes */
+}
+
+h1, h2, h3 {
+  color: var(--primary-color); /* Color oscuro para los títulos */
+  margin-bottom: 1rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+/* --- Estilos de la Cabecera (Header) --- */
+.header {
+  background-color: #FFFFFF; /* Fondo blanco para la cabecera */
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para darle profundidad */
+  position: sticky; /* La cabecera se mantiene fija en la parte superior */
+  top: 0;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.header .container {
+  display: flex; /* Alinea el logo y la navegación en una fila */
+  justify-content: space-between; /* Espacia los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+  position: relative; /* Para el posicionamiento del menú móvil */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Quita el subrayado del enlace */
+  font-weight: bold;
+}
+
+.logo-img {
+  height: 40px; /* Altura del logo */
+  margin-right: 10px; /* Espacio entre el logo y el nombre */
+}
+
+.logo-name {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+/* --- Menú de Navegación --- */
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+  margin-left: 30px;
+}
+
+.nav-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+.nav-links .fa-chevron-down {
+  font-size: 0.7em;
+  transition: transform 0.3s ease;
+}
+
+/* Menú desplegable (Dropdown) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 180px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  z-index: 1001;
+}
+
+.dropdown-content li {
+  margin: 0;
+}
+
+.dropdown-content a {
+  padding: 10px 20px;
+  display: block;
+  white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* --- Botón de Menú Móvil (Hamburguesa) --- */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* --- Sección de Bienvenida (Hero) --- */
+.hero {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 80px 0;
+}
+
+.hero h1 {
+    color: var(--text-color);
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Sección de Servicios --- */
+.services-section {
+    padding: 60px 0;
+    background-color: var(--light-bg-color);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.service-content {
+    padding: 25px;
+}
+
+.service-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.service-content p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* --- Estilos de las Secciones de Carruseles --- */
+.products-section, .jobs-section {
+    padding: 50px 0;
+}
+
+.jobs-section {
+    background-color: #FFFFFF; /* Fondo blanco para diferenciarla */
+}
+
+/*correccion carrucel*/
+
+ .carousel {
+      position: relative;
+      width: min(92vw, 900px);
+      aspect-ratio: 16 / 9;
+      margin: 1.5rem auto 2rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #111;
+      box-shadow: 0 15px 30px rgba(0,0,0,.35);
+    }
+
+    /* Diapositivas apiladas una encima de otra */
+    .carousel-slide {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: clamp(1rem, 2vw + 1rem, 2rem);
+      color: #fff;
+      opacity: 0;
+      transition: opacity .6s ease;
+      pointer-events: none; /* evita clics en slides ocultas */
+    }
+    .carousel-slide.active { opacity: 1; pointer-events: auto; 
+    display: block;
+  }
+
+    /* Demo: fondos bonitos para que funcione incluso sin imágenes */
+    .carousel-slide:nth-child(1) { background: radial-gradient(1200px 500px at 0% 0%, #4f46e5, #111); }
+    .carousel-slide:nth-child(2) { background: radial-gradient(1200px 500px at 100% 0%, #16a34a, #111); }
+    .carousel-slide:nth-child(3) { background: radial-gradient(1200px 500px at 50% 100%, #ea580c, #111); }
+
+    /* Si usas imágenes, que ocupen todo sin deformarse */
+    .carousel-slide img {
+      width: 100%; height: 100%; object-fit:fill; display: block;
+    }
+
+    /* Accesibilidad: si alguien prefiere menos animación */
+    @media (prefers-reduced-motion: reduce) {
+      .carousel-slide { transition: none; }
+    }
+
+    /* Indicadores opcionales (solo visuales) */
+    .dots { display: flex; gap: .5rem; justify-content: center; align-items: center; margin-top: .25rem; }
+    .dot { width: 8px; height: 8px; border-radius: 999px; background: #444; opacity: .6; }
+    .dot.active { background: #fff; opacity: 1; }
+
+
+
+
+
+
+/* --- Estilos del Carrusel (Swiper) --- */
+.swiper {
+  width: 90%;
+  height: 300px; /* Altura del carrusel */
+  border-radius: 15px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: var(--primary-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column; /* Organiza imagen y contenido verticalmente */
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Necesario para posicionar el contenido sobre la imagen */
+  overflow: hidden; /* Oculta partes de la imagen que se salgan */
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* La imagen cubre todo el slide sin deformarse */
+  transition: transform 0.4s ease; /* Transición suave para el efecto de zoom */
+}
+
+.swiper-slide:hover img {
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(10, 38, 71, 0.9) 0%, rgba(10, 38, 71, 0) 100%);
+    padding: 40px 20px 20px 20px;
+    text-align: left;
+}
+
+.slide-content h3 {
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}
+.slide-content p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+
+/* Estilos para los botones de navegación y paginación de Swiper 
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--text-color); /* Color de las flechas 
+}*/
+
+.swiper-pagination-bullet-active {
+  background: var(--text-color); /* Color del punto de paginación activo */
+}
+
+
+
+
+
+
+
+
+/* --- Estilos del Pie de Página (Footer) --- */
+.footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 40px 0 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+  gap: 20px; /* Espacio entre las columnas del footer */
+  margin-bottom: 30px;
+}
+
+.footer-contact h3 {
+  color: #f0eded;
+  margin-bottom: 15px;
+}
+.footer-social{
+color: #f7f6f8e0;
+margin-bottom: 15px;
+text-align: left;    /* alinea el contenido dentro del div */
+float: left;         /* lo lleva a la izquierda de la página */
+margin-left: 0;      /* elimina margen izquierdo extra */
+}
+.footer-social h3{
+  text-align: left;
+}
+
+.footer-contact p {
+  margin-bottom: 10px;
+}
+
+.footer-contact a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+.footer-social a {
+  color: var(--text-color);
+  font-size: 24px;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: var(--accent-color); /* Cambia de color al pasar el ratón */
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--secondary-color); /* Línea de separación */
+  font-size: 0.9em;
+}
+
+/* --- Estilos Responsivos --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Muestra el botón de hamburguesa */
+    }
+
+    .navbar {
+        display: none; /* Oculta el menú por defecto */
+        position: absolute;
+        top: 100%; /* Se posiciona debajo de la cabecera */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar.active {
+        display: block; /* Muestra el menú cuando tiene la clase 'active' */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Apila los enlaces verticalmente */
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-links a {
+        padding: 15px;
+        display: block;
+        width: 100%;
+    }
+    
+    .dropdown .fa-chevron-down {
+        display: none; /* Oculta la flecha en móvil */
+    }
+
+    .dropdown-content {
+        position: static;
+        display: block; /* Siempre visible dentro del flujo normal */
+        background-color: #f7f7f7;
+        box-shadow: none;
+        padding: 0;
+        border-radius: 0;
+        min-width: 100%;
+    }
+    
+    .dropdown-content a {
+        padding-left: 40px; /* Indentación para sub-items */
+        background-color: var(--light-bg-color);
+        color: var(--secondary-color);
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .swiper {
+        height: 350px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-social {
+        margin-top: 20px;
+    }
+}
+/*seccion de redes sociales*/
+.social-links {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #efeff5;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.social-links a i {
+    margin-right: 8px;
+}
+
+.social-links a:hover {
+    color: #dbeb04;
+    transform: scale(1.2);
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    color: #000 !important;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 15px !important;
+}
+
+.whatsapp-btn:hover {
+    background: #128C7E;
+    color: #fff !important;
+}
