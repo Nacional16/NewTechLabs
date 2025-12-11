@@ -1,270 +1,240 @@
 <!DOCTYPE html>
-<!-- Declara el tipo de documento como HTML5 -->
 <html lang="es">
-<!-- El atributo lang="es" especifica que el idioma de la página es español -->
-
 <head>
-  <!-- La sección head contiene metadatos e información sobre el documento -->
   <meta charset="UTF-8">
-  <!-- Especifica la codificación de caracteres UTF-8, que soporta la mayoría de los caracteres y símbolos -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Asegura que la página se vea bien en todos los dispositivos (diseño responsivo) -->
   <title>NewTech Labs - Innovación y Tecnología</title>
-  <!-- El título de la página que aparece en la pestaña del navegador -->
 
-  <!-- Importa la hoja de estilos de la librería Swiper para los carruseles -->
-  
- 
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <!-- Importa los iconos de Font Awesome para los enlaces sociales en el pie de página -->
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="" crossorigin="anonymous" />
 
-  <!--icono de favicon-->
-  <link rel="icon" href="img/logo_newtech_N.ico.png" type="image/png">
-  <!-- Enlaza nuestra hoja de estilos personalizada -->
+  <!-- favicon -->
+  <link rel="icon" href="img/logo.png" type="image/png">
+
+  <!-- Hoja de estilos propia -->
   <link rel="stylesheet" href="style.css">
- 
-  
 </head>
 
-<body>  
-
-  <!-- El cuerpo del documento, contiene todo el contenido visible de la página -->
-
-  <!-- ====== Cabecera (Header) ====== -->
+<body>
   <header class="header">
-    <div class="container">
-      <!-- Contenedor del logo y nombre de la empresa -->
+    <div class="container header-container">
       <a href="#" class="logo">
-        <img src="/logo.png" alt="Logo NewTech Labs" class="logo-img">
-        <!-- El logo de la empresa -->
-        <span class="logo-name">NewTech Labs</span> <!-- El nombre de la empresa -->
+        <img src="img/logo.png" alt="logo" class="logo-img">
+        <span class="logo-name">NewTech Labs</span>
       </a>
-      <!-- Menú de navegación -->
-      <nav class="navbar">
-          <ul class="nav-links">
-              <li><a href="#inicio">Inicio</a></li>
-              <li><a href="#productos">Productos</a></li>
-              <li class="dropdown">
-                  <a href="#servicios">Servicios <i class="fas fa-chevron-down"></i></a>
-                  <ul class="dropdown-content">
-                      <li><a href="#contacto">Consultoría</a></li>
-                      <li><a href="#servicio">Venta de Equipos</a></li>
-                      <li><a href="#servicios">Soporte</a></li>
-                  </ul>
-              </li>
-              <li><a href="#contacto">Contacto</a></li>
-          </ul>
+
+      <nav class="navbar" aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li class="dropdown">
+            <a href="#servicios">Servicios <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+            <ul class="dropdown-content" aria-label="Submenú servicios">
+              <li><a href="#social-links">Consultoría</a></li>
+              <li><a href="#servicio">Venta de Equipos</a></li>
+              <li><a href="#servicios">Soporte</a></li>
+              
+            </ul>
+          </li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
       </nav>
-      <!-- Botón para el menú móvil -->
+
       <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
-          <i class="fas fa-bars"></i>
+        <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
     </div>
   </header>
 
-  <!-- ====== Contenido Principal (Main) ====== -->
   <main>
-    <!-- Sección de Bienvenida -->
+    <!-- SECCIÓN INICIO -->
     <section class="hero" id="inicio">
-        <div class="container">
-            <h1>Innovación que Transforma el Futuro</h1>
-            <p>En NewTech Labs, creamos soluciones tecnológicas de vanguardia para los desafíos del mañana.</p>
+    <div class="container">
+      <h1>Innovación que Transforma el Futuro</h1>
+      <p>En NewTech Labs, creamos soluciones tecnológicas de vanguardia para los desafíos del mañana.</p>
+    </div>
+  </section>
+
+   <!-- SECCIÓN PRODUCTOS -->
+  <section class="products-section" id="productos">
+    <div class="container">
+      <h2>Nuestros Productos</h2>
+
+      <div class="carousel" aria-roledescription="carousel">
+        <div class="carousel-slide" data-product="1">
+          <img src="img/img_5.png" alt="Laptop Gamer Asus" class="clickable-img">
+          <div class="slide-content">
+            <h3>Laptop Gamer Asus</h3>
+            <p>Soluciones de automatización inteligente para la industria 4.0.</p>
+            <p class="click-hint">Haz clic en la imagen para más detalles</p>
+          </div>
         </div>
-    </section>
 
-    <!-- ====== Sección de Productos ====== -->
-    <section class="products_section" id="productos">
-      <div class="container">
+        <div class="carousel-slide" data-product="2">
+          <img src="img/img_6.png" alt="Laptop Lenovo" class="clickable-img">
+          <div class="slide-content">
+            <h3>Laptop Lenovo</h3>
+            <p>Plataformas de Big Data para la toma de decisiones estratégicas.</p>
+            <p class="click-hint">Haz clic en la imagen para más detalles</p>
+          </div>
         </div>
-        <h2>Nuestros Productos</h2>
 
- <!-- Contenedor del carrusel de Swiper -->
-    <div class="carousel">
+        <div class="carousel-slide" data-product="3">
+          <img src="img/img_7.png" alt="All in One HP" class="clickable-img">
+          <div class="slide-content">
+            <h3>All in one (HP)</h3>
+            <p>Experiencias inmersivas para simulación, capacitación y entretenimiento.</p>
+            <p class="click-hint">Haz clic en la imagen para más detalles</p>
+          </div>
+        </div>
 
-       <!-- Diapositiva 1 -->
-    <div class="carousel-slide">     
-      <img src="img/img_5.png" alt="Imagen 1">
-      <div class="slide-content">
-         <h3>laptop Gamer Asus</h3>
-         <p>Soluciones de automatización inteligente para la industria 4.0.</p>
+        <div class="carousel-slide" data-product="4">
+          <img src="img/img_8.png" alt="Desktop Dell" class="clickable-img">
+          <div class="slide-content">
+            <h3>Desktop Dell</h3>
+            <p>Rendimiento y fiabilidad para entornos profesionales.</p>
+            <p class="click-hint">Haz clic en la imagen para más detalles</p>
+          </div>
+        </div>
       </div>
     </div>
-      <!-- Diapositiva 2 -->
-    <div class="carousel-slide">     
-      <img src="img/img_6.png" alt="Imagen 2">
-      <div class="slide-content">
-         <h3>Laptop Lenovo</h3>
-         <p>Plataformas de Big Data para la toma de decisiones estratégicas.</p>
+  </section>
+
+  <!-- Modal PRODUCTOS -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeProductModal">&times;</span>
+      <div class="modal-header">
+        <h2 id="modalProductTitle">Producto</h2>
+      </div>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-images">
+            <img id="modalProductImage" src="" alt="Producto">
+          </div>
+          <div class="modal-info">
+            <h3 id="modalProductName"></h3>
+            <p id="modalProductDesc"></p>
+            <div class="product-specs">
+              <h4>Especificaciones:</h4>
+              <ul id="modalProductSpecs"></ul>
+            </div>
+            <div class="product-price">
+              <h4>Precio: <span id="modalProductPrice"></span></h4>
+            </div>
+            <button class="btn-contact" onclick="window.open('https://wa.me/573152898917?text=Hola,%20quiero%20más%20información')">Solicitar Cotización</button>
+            
+            
+            
+          </div>
+        </div>
       </div>
     </div>
-      <!-- Diapositiva 3 -->
-    <div class="carousel-slide">     
-      <img src="img/img_7.png" alt="Imagen 3">
-      <div class="slide-content">
-         <h3>All in one (HP)</h3>
-         <p>Experiencias inmersivas para simulación, capacitación y entretenimiento.</p>
-      </div>
-    </div>
-     <div class="carousel-slide">     
-      <img src="img/img_8.png" alt="Imagen 4">
-      <div class="slide-content">
-         <h3>Desktop Dell</h3>
-         <p>Experiencias inmersivas para simulación, capacitación y entretenimiento.</p>
-      </div>
-    </div>
-   
   </div>
 
-   
-          <!-- Modal --
-        <div class="modal">
-         <span class="close">&times;</span>
-         <div class="modal-content">
-           <img src="" alt="Modal Imag">
-         </div>
-        </div>
-          <!-- Botones de navegación del carrusel --
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <!-- Paginación del carrusel (los puntos inferiores) --
-          <div class="swiper-pagination"></div>-->
-        </div>
-      </div>
-    </section>
-
-    <!-- ====== Sección de Servicios ====== -->
-    <section class="services-section" id="servicios">
-        <div class="container">
-            <h2>Nuestros Servicios</h2>
-            <div class="services-grid">
-                <!-- Servicio 1: Consultoría -->
-                <div class="service-card">
-                    <img src="/img/service1.png" alt="Consultoría Tecnológica">
-                    <div class="service-content">
-                        <h3>Consultoría RRHH</h3>
-                        <p>Te ayudamos a navegar el complejo paisaje tecnológico y a trazar una hoja de ruta para el éxito digital de tu empresa.</p>
-                    </div>
-                </div>
-                <!-- Servicio 2: Desarrollo--> 
-                <div class="service-card">
-                    <img src="/img/service2.png" alt="Desarrollo de Software">
-                    <div class="service-content">
-                        <h3>Venta de Equipos</h3>
-                        <p>Para potenciar tu negocio con las mejores marcas y alquiler de aquipos.</p>
-                    </div>
-                </div>
-                <!-- Servicio 3: Soporte -->
-                <div class="service-card">
-                    <img src="/img/service3.png" alt="Soporte y Mantenimiento">
-                    <div class="service-content">
-                        <h3>Soporte</h3>
-                        <p>Ofrecemos soporte técnico y mantenimiento continuo para garantizar que tus sistemas operen siempre al máximo rendimiento.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== Sección de Trabajos ====== --
-    <section class="jobs-section">
-      <div class="container">
-        <h2>Únete a Nuestro Equipo</h2>
-        <!-- Contenedor del carrusel de Swiper para trabajos --
-       <div class="services-grid">
-                <!-- Servicio 1: Consultoría --
-                <div class="service-card">
-                    <img src="/img/job1.png" alt="Consultoría Tecnológica">
-                    <div class="service-content">
-                        <h3>Consultoría RRHH</h3>
-                        <p>Te ayudamos a navegar el complejo paisaje tecnológico y a trazar una hoja de ruta para el éxito digital de tu empresa.</p>
-                    </div>
-                </div>
-                <!-- Servicio 2: Desarrollo--
-                <div class="service-card">
-                    <img src="/img/job2.png" alt="Desarrollo de Software">
-                    <div class="service-content">
-                        <h3>Venta de Equipos</h3>
-                        <p>Para potenciar tu negocio con las mejores marcas y alquiler de aquipos.</p>
-                    </div>
-                </div>
-                <!-- Servicio 3: Soporte --
-                <div class="service-card">
-                    <img src="/img/job3.png" alt="Soporte y Mantenimiento">
-                    <div class="service-content">
-                        <h3>Soporte</h3>
-                        <p>Ofrecemos soporte técnico y mantenimiento continuo para garantizar que tus sistemas operen siempre al máximo rendimiento.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Diapositiva 3 --
-            <div class="swiper-slide">
-              <img src="job3.png" alt="Trabajo 3">
-              <div class="slide-content">
-                <h3>Diseñador UX/UI</h3>
-                <p>Crea interfaces intuitivas y atractivas para nuestros usuarios.</p>
-              </div>
-            </div>
+  <!-- SECCIÓN SERVICIOS -->
+  <section class="services-section" id="servicios">
+    <div class="container">
+      <h2>Nuestros Servicios</h2>
+      <div class="services-grid">
+        <div class="service-card" data-service="1">
+          <img src="img/service1.png" alt="Consultoría Tecnológica" class="clickable-img">
+          <div class="service-content">
+            <h3>Consultoría RRHH</h3>
+            <p>Te ayudamos a navegar el complejo paisaje tecnológico y a trazar una hoja de ruta para el éxito digital de tu empresa.</p>
+            <p class="click-hint">Haz clic para más información</p>
           </div>
-          <!-- Botones de navegación del carrusel --
-          <div class="swiper-button-next jobs-button-next"></div>
-          <div class="swiper-button-prev jobs-button-prev"></div>
-          <!-- Paginación del carrusel --
-          <div class="swiper-pagination"></div>-->
+        </div>
+
+        <div class="service-card" data-service="2">
+          <img src="img/service2.png" alt="Venta de Equipos" class="clickable-img">
+          <div class="service-content">
+            <h3>Venta de Equipos</h3>
+            <p>Para potenciar tu negocio con las mejores marcas y alquiler de equipos.</p>
+            <p class="click-hint">Haz clic para más información</p>
+          </div>
+        </div>
+
+        <div class="service-card" data-service="3">
+          <img src="img/service3.png" alt="Soporte y Mantenimiento" class="clickable-img">
+          <div class="service-content">
+            <h3>Soporte</h3>
+            <p>Ofrecemos soporte técnico y mantenimiento continuo para garantizar que tus sistemas operen siempre al máximo rendimiento.</p>
+            <p class="click-hint">Haz clic para más información</p>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-       <!-- Modal 
-        <div class="modal">
-         <span class="close">&times;</span>
-         <div class="modal-content">
-           <img src="" alt="Modal Imag">
-         </div>
+  <!-- Modal SERVICIOS -->
+  <div id="serviceModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeServiceModal">&times;</span>
+      <div class="modal-header">
+        <h2 id="modalServiceTitle">Servicio</h2>
+      </div>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <div class="gallery-main">
+            <img id="modalServiceMainImage" src="" alt="Servicio">
+          </div>
+          <div class="gallery-thumbs" id="galleryThumbs"></div>
         </div>
-    </section>
+        <div class="service-details">
+          <h3 id="modalServiceName"></h3>
+          <p id="modalServiceDesc"></p>
+          <div class="service-features">
+            <h4>Características:</h4>
+            <ul id="modalServiceFeatures"></ul>
+          </div>
+          <button class="btn-contact" onclick="window.open('https://wa.me/573152898917?text=Hola,%20quiero%20más%20información')">Contactar Ahora
+</button>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   </main>
 
-  <!-- ====== Pie de Página (Footer) ====== -->
   <footer class="footer" id="contacto">
     <div class="container">
       <div class="footer-content">
-        <!-- Información de contacto -->
         <div class="footer-contact">
           <h3>Contacto</h3>
-          <p><i class="fas fa-phone"></i> Teléfono: +57 315 2898917 --310 4485990</p>
-          <p><i class="fas fa-envelope"></i> Email: <a href="mailto:newtechlabs@hotmail.com">newtechlabs@hotmail.com</a></p>
+          <p><i class="fas fa-phone" aria-hidden="true"></i> Teléfono: +57 315 2898917 / 310 4485990</p>
+          <p><i class="fas fa-envelope" aria-hidden="true"></i> Email: <a href="mailto:newtechlabs@hotmail.com">newtechlabs@hotmail.com</a></p>
         </div>
-        <!-- Enlaces a redes sociales -->
-        <div class="footer-social">
+
+       <!-- <div class="footer-social">
           <h3>Síguenos</h3>
-          <!-- Enlace a WhatsApp Business -->
           <a href="https://wa.me/573152898917" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <!-- Enlace a LinkedIn (usar URL real cuando esté disponible) -->
           <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <!-- Otros enlaces sociales se pueden agregar aquí -->
         </div>
-      </div>
+      </div>-->
 
       <div class="social-links">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> X</a>
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://web.whatsApp.com/+57 3152898917" class=" whatsapp-btn" target="_blank">
-        <i class="fab fa-whatsapp"></i> WhatApp
-      </a>
-    </div>
-      <!-- Derechos de autor -->
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> X</a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://wa.me/573152898917" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+
       <div class="footer-bottom">
         <p>&copy; 2024 NewTech Labs. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Enlaza nuestro script de JavaScript. 'type="module"' es necesario para usar importaciones. -->
-  <script type="module" src="script.js"></script>
+  <!-- Scripts: Swiper (si lo usas) y script propio -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>
