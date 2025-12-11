@@ -1,12 +1,43 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+  // ===== MENÚ HAMBURGUESA =====
+  const menuToggle = document.getElementById('menu-toggle');
+  const navbar = document.querySelector('.navbar');
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', navbar.classList.contains('active'));
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+      });
+    });
+  }
+
+  // Dropdown en móvil
+  document.querySelectorAll('.dropdown').forEach(dropdown => {
+    const link = dropdown.querySelector('a');
+    if (link) {
+      link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          dropdown.classList.toggle('active');
+        }
+      });
+    }
+  });
+
+  // ===== CARRUSEL =====
   let slideIndex = 0;
   const slides = document.querySelectorAll('.carousel-slide');
   const totalSlides = slides.length;
   const intervalTime = 3000;
   let autoPlay = null;
 
-  // Si no hay slides, no hacer nada y evitar errores
   if (totalSlides === 0) {
     console.warn('No se encontraron .carousel-slide');
     return;
@@ -43,25 +74,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Pausar cuando el mouse está encima del carrusel
   const carousel = document.querySelector('.carousel');
   if (carousel) {
     carousel.addEventListener('mouseenter', stopAutoPlay);
     carousel.addEventListener('mouseleave', startAutoPlay);
   }
 
-  // Control con teclado: solo cuando el foco está dentro del documento (global)
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') changeSlide(-1);
     if (e.key === 'ArrowRight') changeSlide(1);
   });
 
-  // Inicializar
   showSlide(slideIndex);
   startAutoPlay();
 
-
-// ===== DATOS DE PRODUCTOS Y SERVICIOS =====
+  // ===== DATOS DE PRODUCTOS Y SERVICIOS =====
   const productData = {
     1: {
       name: 'Laptop Gamer Asus',
@@ -156,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `<img class="gallery-thumb ${idx === 0 ? 'active' : ''}" src="${img}" data-index="${idx}" alt="Servicio ${idx + 1}">`
       ).join('');
 
-      // Galería interactiva
       document.querySelectorAll('.gallery-thumb').forEach(thumb => {
         thumb.addEventListener('click', () => {
           document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
@@ -171,18 +197,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   closeServiceModal.addEventListener('click', () => serviceModal.classList.remove('active'));
 
-  // Cerrar modal al hacer clic fuera
+  // Cerrar modales al hacer clic fuera
   window.addEventListener('click', (e) => {
     if (e.target === productModal) productModal.classList.remove('active');
     if (e.target === serviceModal) serviceModal.classList.remove('active');
   });
 
-  // Cerrar modal con ESC
+  // Cerrar modales con ESC
   document.addEventListener('keydown', (e) => {
-    if (e.key === '#contacto') {
+    if (e.key === 'Escape') {
       productModal.classList.remove('active');
       serviceModal.classList.remove('active');
     }
   });
-});
 
+  // Cerrar menú al cambiar tamaño
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navbar.classList.remove('active');
+    }
+  });
+});
